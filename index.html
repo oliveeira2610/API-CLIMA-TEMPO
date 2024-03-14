@@ -115,8 +115,6 @@
           document.getElementById('humidity').textContent = `${data.Umidade}%`;
           document.getElementById('wind').textContent = `${data.VelocidadeDoVento} m/s`;
           document.getElementById('weatherDesc').textContent = `${data.Clima}`;
-          document.getElementById('dateDayname').textContent = `${data.DayName}`;
-          document.getElementById('dateDay').textContent = `${data.Date}`;
           document.getElementById('location').textContent = `${data.Location}`;
 
           if (data.Clima.includes('Nuvens quebradas')) {
