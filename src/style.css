@@ -1,0 +1,492 @@
+html,body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1 {
+    color: #daeefb;
+    padding: 20px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+:root {
+	--gradient: linear-gradient( 135deg, var(--color-bg1), var(--color-bg2));
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	line-height: 1.25em;
+}
+
+.clear {
+	clear: both;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+	background-color: #343d4b;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+.container {
+	border-radius: 25px;
+	-webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: #222831;
+	color: #ffffff;
+	height: 400px;
+}
+
+.weather-side {
+	position: relative;
+	height: 100%;
+	border-radius: 25px;
+	background-image: url("https://i.pinimg.com/736x/15/41/39/154139f5d6f1a38f2993daf659cdc414.jpg");
+	width: 300px;
+	-webkit-box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.2);
+	-webkit-transition: -webkit-transform 300ms ease;
+	transition: -webkit-transform 300ms ease;
+	-o-transition: transform 300ms ease;
+	transition: transform 300ms ease;
+	transition: transform 300ms ease, -webkit-transform 300ms ease;
+	-webkit-transform: translateZ(0) scale(1.02) perspective(1000px);
+	        transform: translateZ(0) scale(1.02) perspective(1000px);
+	float: left;
+}
+
+.weather-side:hover {
+	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
+}
+
+.weather-gradient {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-image: var(--gradient);
+	border-radius: 25px;
+	opacity: 0.5;
+}
+
+.date-container {
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+.date-dayname {
+	margin: 0;
+}
+
+.date-day {
+	display: block;
+}
+
+.location {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.location-icon {
+	display: inline-block;
+	height: 0.8em;
+	width: auto;
+	margin-right: 5px;
+}
+
+.weather-container {
+	position: absolute;
+	bottom: 65px;
+	left: 25px;
+}
+
+.weather-icon.feather {
+	height: 60px;
+	width: auto;
+}
+
+.weather-temp {
+	font-weight: 700;
+	font-size: 3.5em;
+}
+
+.weather-desc {
+	margin: 0;
+}
+
+.info-side {
+	position: relative;
+	float: left;
+	height: 100%;
+	padding-top: 25px;
+}
+
+.today-info {
+	padding: 15px;
+	margin: 0 25px 25px 25px;
+/* 	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25); */
+	border-radius: 10px;
+}
+
+.today-info>div:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.today-info>div .title {
+	float: left;
+	font-weight: 700;
+}
+
+.today-info>div .value {
+	float: right;
+}
+
+.week-list {
+	list-style-type: none;
+	padding: 0;
+	margin: 10px 35px;
+	-webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	/* background: # */
+}
+
+.week-list>li {
+	float: left;
+	padding: 15px;
+	cursor: pointer;
+	-webkit-transition: 200ms ease;
+	-o-transition: 200ms ease;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+
+.week-list>li:hover {
+	-webkit-transform: scale(1.1);
+	    -ms-transform: scale(1.1);
+	        transform: scale(1.1);
+	background: #fff;
+	color: #222831;
+	-webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+	        box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2)
+}
+
+.week-list>li.active {
+	background: #fff;
+	color: #222831;
+	border-radius: 10px;
+}
+
+.week-list>li .day-name {
+	display: block;
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.week-list>li .day-icon {
+	display: block;
+	height: 30px;
+	width: auto;
+	margin: 0 auto;
+}
+
+.week-list>li .day-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+	font-weight: 700;
+}
+
+.location-container {
+	padding: 25px 35px;
+}
+
+.location-button {
+	outline: none;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+	font-family: 'Montserrat', sans-serif;
+	background-image: var(--gradient);
+	color: #ffffff;
+	font-weight: 700;
+	-webkit-box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	        box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	-webkit-transition: -webkit-transform 200ms ease;
+	transition: -webkit-transform 200ms ease;
+	-o-transition: transform 200ms ease;
+	transition: transform 200ms ease;
+	transition: transform 200ms ease, -webkit-transform 200ms ease;
+}
+
+.location-button:hover {
+	-webkit-transform: scale(0.95);
+	    -ms-transform: scale(0.95);
+	        transform: scale(0.95);
+}
+
+.location-button .feather {
+	height: 1em;
+	width: auto;
+	margin-right: 5px;
+}
+
+
+form {
+    color: #daeefb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 2%;
+    background-color: #a4a4a4b6;
+    border-radius: 100px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 40rem;
+    margin-top: 10%;
+}
+
+input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #767ba7;
+    color: #daeefb;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #767ba7;
+    color: aqua;
+}
+
+#climaResult {
+    background-color: #767ba7;
+    color: #daeefb;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 96px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+  }
+  
+  :root {
+    /* Variáveis para a cor de fundo */
+    --color-bg1: var(--default-bg1);
+    --color-bg2: var(--default-bg2);
+    /* Outras variáveis */
+    --default-bg1: #4210ce; /* Cor de fundo padrão 1 */
+    --default-bg2: #a300f5; /* Cor de fundo padrão 2 */
+    --color1: 18, 113, 255;
+    --color2: 221, 74, 255;
+    --color3: 100, 220, 255;
+    --color4: 200, 50, 50;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 80%;
+    --blending: hard-light;
+  }
+  
+  @keyframes moveInCircle {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes moveVertical {
+    0% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+  
+  @keyframes moveHorizontal {
+    0% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+      transform: translateX(50%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-10%);
+    }
+  }
+  
+  
+  .gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+    z-index:  -1;
+  
+  
+    svg {
+      display: none;
+    }
+  
+  
+    .gradients-container {
+      filter: url(#goo) blur(40px) ;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .g1 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+  
+      transform-origin: center center;
+      animation: moveVertical 30s ease infinite;
+  
+      opacity: 1;
+    }
+  
+    .g2 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+  
+      transform-origin: calc(50% - 400px);
+      animation: moveInCircle 20s reverse infinite;
+  
+      opacity: 1;
+    }
+  
+    .g3 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2 + 200px);
+      left: calc(50% - var(--circle-size) / 2 - 500px);
+  
+      transform-origin: calc(50% + 400px);
+      animation: moveInCircle 40s linear infinite;
+  
+      opacity: 1;
+    }
+  
+    .g4 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(50% - var(--circle-size) / 2);
+      left: calc(50% - var(--circle-size) / 2);
+  
+      transform-origin: calc(50% - 200px);
+      animation: moveHorizontal 40s ease infinite;
+  
+      opacity: 0.7;
+    }
+  
+    .g5 {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: calc(var(--circle-size) * 2);
+      height: calc(var(--circle-size) * 2);
+      top: calc(50% - var(--circle-size));
+      left: calc(50% - var(--circle-size));
+  
+      transform-origin: calc(50% - 800px) calc(50% + 200px);
+      animation: moveInCircle 20s ease infinite;
+  
+      opacity: 1;
+    }
+  
+    .interactive {
+      position: absolute;
+      background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+      mix-blend-mode: var(--blending);
+  
+      width: 100%;
+      height: 100%;
+      top: -50%;
+      left: -50%;
+  
+      opacity: 0.7;
+    }
+  }
+  
