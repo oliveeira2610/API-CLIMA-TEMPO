@@ -32,7 +32,9 @@ h1 {
 .clear {
 	clear: both;
 }
+@media screen  and (max-width: 640px) {
 
+}
 body {
 	margin: 0;
 	width: 100%;
@@ -223,7 +225,7 @@ body {
 }
 
 .location-container {
-	padding: 25px 35px;
+	padding: 30px 65px;
 }
 
 .location-button {
@@ -516,4 +518,10 @@ button[type="submit"]:hover {
     width: 400px;
   }
     
+}
+
+@media (max-width: 640px) {
+  .container{
+    width: 1000px;
+  }
 }
